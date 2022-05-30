@@ -29,7 +29,6 @@ def checkip():
 
     except:
         print ('Could not execute the following request.')
-        print (r)
         sys.exit()
 
 checkip()
