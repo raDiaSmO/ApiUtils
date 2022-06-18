@@ -3,6 +3,7 @@
 import os
 import sys
 import subprocess
+import re
 
 def wpscan():
 
@@ -15,16 +16,16 @@ def wpscan():
     else:
         print ('The provided path does not exist.')
         sys.exit()
-    
+
     with open (file) as assets:
         for asset in assets:
 
             try:
-                print("wpscan --url",asset,"--random-user-agent --disable-tls-checks --detection-mode aggressive --api-token",api,"-e vp,vt,dbe")
-                subprocess.Popen("wpscan --url",asset,"--random-user-agent --disable-tls-checks --detection-mode aggressive --api-token",api,"-e vp,vt,dbe")
+                fstring = f"wpscan --url {asset} --random-user-agent --disable-tls-checks --detection-mode aggressive --api-token {api} -e vp,vt,dbe --output ~/wpscanresult --format cli"
+                command = re.sub('\?|\!|\'|\n|\'|\;', '', fstring)
+                subprocess.check_output(['bash','-c', command])
 
             except:
                 print ('Could not execute the request')
                 sys.exit()
-
 wpscan()
