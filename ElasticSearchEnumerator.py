@@ -9,8 +9,11 @@ import itertools
 def elk():
 
     ip =  sys.argv[1]
-    fip = f"http://{ip}:9200"
-    url = re.sub('\?|\!|\'|\n|\'|\;', '', fip)
+    port = sys.argv[2]
+    protocol = sys.argv[3]
+    f_host = f"{protocol}://{ip}:{port}"
+    url = re.sub('\?|\!|\'|\n|\'|\;', '', f_host)
+    print (url)
 
     catinfo = [
     "/_cat/segments",
@@ -62,9 +65,9 @@ def elk():
     for path in paths:
 
         try:
-            furl = f"{url}{path}?format=json&pretty"
-            print(furl)
-            r = requests.request("GET",furl)
+            f_url = f"{url}{path}?format=json&pretty"
+            print(f_url)
+            r = requests.request("GET",f_url)
             print('===================================================================\n')
             decoded_r = json.loads(r.text)
             print('===================================================================\n')
