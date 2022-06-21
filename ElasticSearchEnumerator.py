@@ -67,7 +67,7 @@ def elk():
         try:
             f_url = f"{url}{path}?format=json&pretty"
             print(f_url)
-            r = requests.request("GET",f_url)
+            r = requests.request("GET",f_url, verify=False)
             print('===================================================================\n')
             decoded_r = json.loads(r.text)
             print('===================================================================\n')
