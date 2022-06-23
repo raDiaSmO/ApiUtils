@@ -5,9 +5,6 @@ import json
 import sys
 
 def checkip():
-    if not (len(sys.argv) == 3):
-        print ('Not enough arguments passed to process this request.')
-        sys.exit()
 
     endpoint = 'https://api.abuseipdb.com/api/v2/check'
 
