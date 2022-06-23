@@ -5,7 +5,8 @@ import json
 import sys
 
 def check_url():
-
+    
+    endpoint = 'https://urlscan.io/api/v1/scan' 
     file = sys.argv[1]
     api = sys.argv[2]
 
@@ -23,7 +24,7 @@ def check_url():
             }
 
             try:
-                r = requests.post('https://urlscan.io/api/v1/scan/', headers=http_headers, data=json.dumps(d))
+                r = requests.post(endpoint, headers=http_headers, data=json.dumps(d))
                 r_dict = (r.json())
                 print(r_dict)
                 print ('\n')
