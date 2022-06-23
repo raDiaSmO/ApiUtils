@@ -4,7 +4,7 @@ import requests
 import json
 import sys
 
-def checkip():
+def check_ip():
 
     endpoint = 'https://api.abuseipdb.com/api/v2/check'
 
@@ -28,4 +28,4 @@ def checkip():
         print ('Could not execute the following request.')
         sys.exit()
 
-checkip()
+check_ip()
