@@ -9,12 +9,10 @@ def check_ip():
     endpoint = 'https://api.abuseipdb.com/api/v2/check'
 
     ip = {
-            #This argument is the IP address you want to scan.
                 'ipAddress': sys.argv[1]
     }
 
     http_headers = {
-            #This argument is your API key from AbuseIPDB.
             'Accept': 'application/json',
             'Key': sys.argv[2]
     }
