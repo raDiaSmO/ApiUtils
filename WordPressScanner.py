@@ -22,8 +22,8 @@ def wpscan():
             for asset in assets:
 
                 try:
-                    fstring = f"wpscan --url {asset} --random-user-agent --disable-tls-checks --detection-mode aggressive --api-token {api} -e vp,vt,dbe --output {out} --format cli"
-                    command = re.sub('\?|\!|\'|\n|\'|\;', '', fstring)
+                    f_string = f"wpscan --url {asset} --random-user-agent --disable-tls-checks --detection-mode aggressive --api-token {api} -e vp,vt,dbe --output {out} --format cli"
+                    command = re.sub('\?|\!|\'|\n|\'|\;', '', f_string)
                     subprocess.check_output(['bash','-c', command])
 
                 except:
