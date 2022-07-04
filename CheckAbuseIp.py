@@ -24,7 +24,7 @@ def check_ip():
             try:
                 r = requests.request(method='GET', url=endpoint, headers=http_headers, params=data)
                 decoded_r = json.loads (r.text)
-                print ( json.dumps (decoded_r, sort_keys=True, indent=3) )
+                print (json.dumps (decoded_r, sort_keys=True, indent=3))
 
             except:
                 print ('Could not execute the following request.')
