@@ -15,7 +15,7 @@ def wpscan():
     for path in paths:
 
         if not os.path.exists(path):
-            print ('The provided path does not exist.',path)
+            print('The provided path does not exist.',path)
             sys.exit()
 
         with open (file) as assets:
@@ -27,6 +27,6 @@ def wpscan():
                     subprocess.check_output(['bash','-c', command])
 
                 except:
-                    print ('Could not execute the request')
+                    print('Could not execute the request')
                     sys.exit()
 wpscan()
