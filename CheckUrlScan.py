@@ -26,14 +26,11 @@ def check_url():
             try:
                 r = requests.post(endpoint, headers=http_headers, data=json.dumps(d))
                 r_dict = (r.json())
-                print(r_dict)
-                print ('\n')
-                print('The following link will be accessible in a few minutes and will contain the scan result.')
-                print (r_dict['result'])
-                print ('\n')
+                print(r_dict, end='\n\n\n The following link will be accessible in a few minutes and will contain the scan result.\n\n\n')
+                print(r_dict['result'], end='\n\n\n')
 
             except:
-                print ('Could not execute the following request.')
+                print('Could not execute the following request.')
                 sys.exit()
 
 check_url()
