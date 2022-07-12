@@ -13,7 +13,6 @@ def elk():
     protocol = sys.argv[3]
     f_host = f"{protocol}://{ip}:{port}"
     url = re.sub('\?|\!|\'|\n|\'|\;', '', f_host)
-    print(url)
 
     catinfo = [
     "/_cat/segments",
@@ -66,12 +65,9 @@ def elk():
 
         try:
             f_url = f"{url}{path}?format=json&pretty"
-            print(f_url)
             r = requests.request("GET",f_url, verify=False)
-            print('===================================================================\n')
             decoded_r = json.loads(r.text)
-            print('===================================================================\n')
-            print(json.dumps(decoded_r, sort_keys=True, indent=3))
+            print('\n\n', f_url,'\n\n', json.dumps(decoded_r, sort_keys=True, indent=3), end='\n\n========================================================\n\n')
 
         except:
             print('Could not execute the following request.')
