@@ -29,7 +29,7 @@ def check_url():
                 print('The following link will be accessible in a few minutes and will contain the scan result.\n\n', r_dict['result'], end='\n\n')
 
             except:
-                print ('Could not execute the following request.')
+                print('Could not execute the following request.')
                 sys.exit()
 
 check_url()
