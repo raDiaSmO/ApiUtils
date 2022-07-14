@@ -19,7 +19,7 @@ def check_url():
             }
 
             http_headers = {
-                    'API-Key': sys.argv[2],
+                    'API-Key': api,
                     'Content-Type': 'application/json'
             }
 

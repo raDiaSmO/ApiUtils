@@ -8,6 +8,7 @@ def check_ip():
 
     endpoint = 'https://api.abuseipdb.com/api/v2/check'
     file = sys.argv[1]
+    api = sys.argv[2]
 
     with open (file) as ips:
         for ip in ips:
@@ -18,7 +19,7 @@ def check_ip():
 
             http_headers = {
                     'Accept': 'application/json',
-                    'Key': sys.argv[2]
+                    'Key': api
             }
 
             try:
